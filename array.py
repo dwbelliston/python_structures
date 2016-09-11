@@ -72,6 +72,16 @@ class Array(object):
     def insert(self, index, item):
         '''Inserts an item at the given index, shifting remaining items right
         and allocating a larger array if necessary.'''
+        in_bounds = self._check_bounds(index)
+        if in_bounds:
+            # allocate chunk if at capacity
+            if self.size_filled == self.size_filled:
+                print('Filled! one more will need more space')
+            else:
+                print('Have plenty have room for one more!')
+                # self.content[index] = item
+        else:
+            print('Need ore room to insert!')
 
     def set(self, index, item):
         '''Sets the given item at the given index.  Throws an exception if the
@@ -96,13 +106,17 @@ class Array(object):
         if in_bounds:
             self.content[index] = None
             self.size_filled -= 1
+
             # Iterate over array to right, starting one past index, and drop
             # them down
-            for i, item in enumerate(self.content[index + 1:self.size_alloc + 1], start=index + 1):
+            for i, item in enumerate(self.content[index + 1:self.size_filled + 1], start=index + 1):
                 # replace last item with None
-                if i == self.size_alloc + 1:
-                    item = None
+                if i == self.size_filled:
+                    # End of filled array, put None at end
+                    self.content[i] = None
+                # Move the item back one
                 self.content[i - 1] = item
+
             self._check_decrease()  # alloc less if needed
 
     def swap(self, index1, index2):
@@ -140,12 +154,15 @@ def main(arguments):
     test_array = Array()
     test_array.debug_print()
 
-    for i in range(3):
+    for i in range(2):
         test_array.add('a')
         test_array.add('b')
         test_array.add('c')
         test_array.add('d')
         test_array.add('e')
+
+    # test_array.insert(5, 'Q')
+    test_array.debug_print()
 
 
 if __name__ == '__main__':
