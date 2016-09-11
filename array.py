@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import os
+import csv
 import sys
 import argparse
 
@@ -33,7 +34,7 @@ class Array(object):
         if index >= 0 and index <= self.size_filled - 1:
             return True
         else:
-            print(IndexError('Index: {} out of bounds'.format(index)))
+            print('Error: {} out of bounds'.format(index))
             return False
 
     def _check_increase(self):
@@ -69,23 +70,24 @@ class Array(object):
         self.content[self.size_filled] = item
         self.size_filled += 1
 
-    def insert(self, index, item):
+    def insert(self, new_index, new_item):
         '''Inserts an item at the given index, shifting remaining items right
         and allocating a larger array if necessary.'''
-        in_bounds = self._check_bounds(index)
+        new_index = int(new_index)
+        in_bounds = self._check_bounds(new_index)
         if in_bounds:
-            # allocate chunk if at capacity
-            if self.size_filled == self.size_filled:
-                print('Filled! one more will need more space')
-            else:
-                print('Have plenty have room for one more!')
-                # self.content[index] = item
-        else:
-            print('Need ore room to insert!')
+            self._check_increase()  # alloc more if needed
+            for i, item in reverse_enum(self.content):
+                # shift right from new_index on
+                if i < self.size_filled and i >= new_index:
+                    self.content[i + 1] = item
+            self.content[new_index] = new_item
+            self.size_filled += 1
 
     def set(self, index, item):
         '''Sets the given item at the given index.  Throws an exception if the
         index is not within the bounds of the array.'''
+        index = int(index)
         in_bounds = self._check_bounds(index)
         if in_bounds:
             self.content[index] = item
@@ -93,14 +95,17 @@ class Array(object):
     def get(self, index):
         '''Retrieves the item at the given index.  Throws an exception if the
         index is not within the bounds of the array.'''
+        index = int(index)
         in_bounds = self._check_bounds(index)
         if in_bounds:
-            return self.content[index]
+            print(self.content[index])
 
     def delete(self, index):
         '''Deletes the item at the given index, decreasing the allocated
         memory if needed.  Throws an exception if the index is not within the
         bounds of the array.'''
+        index = int(index)
+
         in_bounds = self._check_bounds(index)
 
         if in_bounds:
@@ -121,6 +126,8 @@ class Array(object):
 
     def swap(self, index1, index2):
         '''Swaps the values at the given indices.'''
+        index1, index2 = int(index1), int(index2)
+
         in_bounds_1 = self._check_bounds(index1)
         in_bounds_2 = self._check_bounds(index2)
 
@@ -148,21 +155,45 @@ def memcpy(dest, source, size):
     return dest
 
 
+def reverse_enum(L):
+    for index in reversed(range(len(L))):
+        yield index, L[index]
+
+
 def main(arguments):
-    print('Test Array Checks------')
+    parser = argparse.ArgumentParser(description='Array methods')
+    parser.add_argument(
+        '-f', '--file', type=argparse.FileType('r'), help="File with instruction set")
+    args = parser.parse_args(arguments)
 
-    test_array = Array()
-    test_array.debug_print()
+    # instruction_set map
+    instruction_map = {}
 
-    for i in range(2):
-        test_array.add('a')
-        test_array.add('b')
-        test_array.add('c')
-        test_array.add('d')
-        test_array.add('e')
+    # Step through the instruction set one at a time
+    count = 0
+    with args.file as f:
+        instruction_set = csv.reader(f)
+        for instruction in iter(instruction_set):
+            if count <= 67:
+                ins_func = instruction[0].lower()
+                print('{}: {}'.format(count, instruction))
+                if ins_func == 'create':
+                    test_array = Array()
+                elif ins_func == 'debug':
+                    test_array.debug_print()
+                elif ins_func == 'add':
+                    test_array.add(instruction[1])
+                else:
+                    methodToCall = getattr(test_array, ins_func)
+                    if instruction[2]:
+                        methodToCall(instruction[1], instruction[2])
+                    else:
+                        methodToCall(instruction[1])
+            count += 1
 
-    # test_array.insert(5, 'Q')
-    test_array.debug_print()
+
+    # Close instruction set
+    args.file.close()
 
 
 if __name__ == '__main__':
