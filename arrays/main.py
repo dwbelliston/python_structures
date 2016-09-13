@@ -17,27 +17,26 @@ def main(arguments):
 
     # Step through the instruction set one at a time
     count = 0
-    with args.file as f:
-        instruction_set = csv.reader(f)
-        for instruction in iter(instruction_set):
-            ins_func = instruction[0].lower()
-            print('{}: {}'.format(count, instruction))
-            if ins_func == 'create':
-                test_array = Array()
-            elif ins_func == 'debug':
-                test_array.debug_print()
-            elif ins_func == 'add':
-                test_array.add(instruction[1])
-            else:
-                methodToCall = getattr(test_array, ins_func)
-                if instruction[2]:
-                    methodToCall(instruction[1], instruction[2])
+    with open('output.txt', 'w') as file_write:
+        with args.file as f:
+            instruction_set = csv.reader(f)
+            for instruction in iter(instruction_set):
+                ins_func = instruction[0].lower()
+                print('{}: {}'.format(count, instruction))
+                file_write.writelines('{}: {}\n'.format(count, instruction))
+                if ins_func == 'create':
+                    test_array = Array()
+                elif ins_func == 'debug':
+                    test_array.debug_print(file_write)
+                elif ins_func == 'add':
+                    test_array.add(instruction[1])
                 else:
-                    methodToCall(instruction[1])
-            count += 1
-
-    # Close instruction set
-    args.file.close()
+                    methodToCall = getattr(test_array, ins_func)
+                    if instruction[2]:
+                        methodToCall(instruction[1], instruction[2])
+                    else:
+                        methodToCall(instruction[1])
+                count += 1
 
 
 if __name__ == '__main__':

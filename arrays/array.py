@@ -11,7 +11,7 @@ class Array(object):
         self.size_filled = 0
         self.chunk_size = chunk_size
 
-    def debug_print(self):
+    def debug_print(self, file_write):
         '''Prints a representation of the entire allocated space, including
         unused spots.'''
         '''EX: 11 of 15 >>> a, e, r, o, I, o, d, u, s, a, u, null, null, null,
@@ -19,6 +19,9 @@ class Array(object):
         values = ', '.join(str(x) for x in self.content)
         print('{} of {} >>> {}'.format(
             self.size_filled, self.size_alloc, values))
+        file_write.writelines('{} of {} >>> {}\n'.format(
+            self.size_filled, self.size_alloc, values))
+
 
     def _check_bounds(self, index):
         '''Ensures the index is within the bounds of
