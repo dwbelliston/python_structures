@@ -18,16 +18,19 @@ class LinkedList(object):
     def _decrease_size(self):
         self.size -= 1
 
-    def debug_print(self):
+    def debug_print(self, file_write):
         '''Prints a representation of the entire list.'''
         content = []
         current = self.head
         while current:
+            # print(current.value)
             content.append(current.value)
             current = current.get_next()
 
         content = ', '.join(str(x) for x in reverse_gen(content))
         print('{} >>> {}'.format(self.size, content))
+        file_write.writelines('{} of {} >>> {}\n'.format(
+            self.size_filled, self.size_alloc, values))
 
     def _get_index(self, index):
         # If index is equal or greater than size OOB
@@ -79,6 +82,13 @@ class LinkedList(object):
 
     def insert(self, index, item):
         '''Inserts an item at the given index, shifting remaining items right.'''
+        new_node = Node(item)
+        insert_node = self._get_node(index)
+        if insert_node:
+            new_node.set_next(insert_node.next)
+            insert_node.set_next(new_node)
+            self._increase_size()
+
 
 
     def set(self, index, item):
@@ -86,18 +96,44 @@ class LinkedList(object):
         set_node = self._get_node(index)
         if set_node:
             set_node.set_value(item)
+            print('SetMe', index, set_node, set_node.next)
 
 
     def get(self, index):
         '''Retrieves the item at the given index.  Throws an exception if the index is not within the bounds of the linked list.'''
+        get_node = self._get_node(index)
+        if get_node:
+            print(get_node.value)
+            return get_node
 
 
     def delete(self, index):
         '''Deletes the item at the given index. Throws an exception if the index is not within the bounds of the linked list.'''
+        delete_node = self._get_node(index)
+        if delete_node:
+            delete_node_forward = self._get_node(index + 1)
+            if delete_node_forward:
+                delete_node_forward.set_next(delete_node.next)
+            else:
+                self.head = delete_node.next
+            self._decrease_size()
+
 
 
     def swap(self, index1, index2):
         '''Swaps the values at the given indices.'''
+        index1, index2 = int(index1), int(index2)
+
+        node_1 = self._get_node(index1)
+        node_2 = self._get_node(index2)
+
+        if node_1 and node_2:
+            node_1_forward = self._get_node(index1 + 1)
+            node_2_forward = self._get_node(index2 + 1)
+
+            node_1_forward.next, node_2_forward.next = node_2, node_1
+            node_1.next, node_2.next = node_2.next, node_1.next
+
 
 
 
@@ -121,7 +157,7 @@ class Node(object):
         return self.next
 
     def __str__(self):
-        return '<Node: {}>'.format(self.value)
+        return '<Node: {} {}>'.format(self.value, self.next)
 
 
 def reverse_gen(arr):
