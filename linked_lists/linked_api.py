@@ -4,10 +4,11 @@ class LinkedList(object):
     A linked list implementation that holds arbitrary objects.
     '''
 
-    def __init__(self):
+    def __init__(self, file_write):
         '''Creates a linked list.'''
         self.size = 0
         self.head = Node(None)
+        self.file_write = file_write
 
     def _set_head(self, head):
         self.head = head
@@ -18,7 +19,7 @@ class LinkedList(object):
     def _decrease_size(self):
         self.size -= 1
 
-    def debug_print(self, file_write):
+    def debug_print(self):
         '''Prints a representation of the entire list.'''
         content = []
         current = self.head
@@ -28,9 +29,8 @@ class LinkedList(object):
             current = current.get_next()
 
         content = ', '.join(str(x) for x in reverse_gen(content))
-        print('{} >>> {}'.format(self.size, content))
-        file_write.writelines('{} of {} >>> {}\n'.format(
-            self.size_filled, self.size_alloc, values))
+        # print('{} >>> {}'.format(self.size, content))
+        self.file_write.writelines('{} >>> {}\n'.format(self.size, content))
 
     def _get_index(self, index):
         # If index is equal or greater than size OOB
@@ -48,7 +48,7 @@ class LinkedList(object):
         try:
             goal_index = self._get_index(index)
         except IndexError:
-            print('Error: Index {} out of bounds'.format(index))
+            self.file_write.writelines('Error: Index {} out of bounds\n'.format(index))
             return None
 
         goal_node = None
@@ -82,6 +82,8 @@ class LinkedList(object):
 
     def insert(self, index, item):
         '''Inserts an item at the given index, shifting remaining items right.'''
+        index = int(index)
+
         new_node = Node(item)
         insert_node = self._get_node(index)
         if insert_node:
@@ -93,22 +95,25 @@ class LinkedList(object):
 
     def set(self, index, item):
         '''Sets the given item at the given index.  Throws an exception if the index is not within the bounds of the linked list.'''
+        index = int(index)
         set_node = self._get_node(index)
         if set_node:
             set_node.set_value(item)
-            print('SetMe', index, set_node, set_node.next)
 
 
     def get(self, index):
         '''Retrieves the item at the given index.  Throws an exception if the index is not within the bounds of the linked list.'''
+        index = int(index)
+
         get_node = self._get_node(index)
         if get_node:
-            print(get_node.value)
+            self.file_write.writelines(get_node.value + '\n')
             return get_node
 
 
     def delete(self, index):
         '''Deletes the item at the given index. Throws an exception if the index is not within the bounds of the linked list.'''
+        index = int(index)
         delete_node = self._get_node(index)
         if delete_node:
             delete_node_forward = self._get_node(index + 1)
