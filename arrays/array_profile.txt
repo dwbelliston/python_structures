@@ -1,0 +1,293 @@
+0: ['CREATE', '', '']
+1: ['DEBUG', '', '']
+0 of 10 >>> None, None, None, None, None, None, None, None, None, None
+2: ['ADD', 'o', '']
+3: ['ADD', 'u', '']
+4: ['ADD', 'r', '']
+5: ['ADD', 'e', '']
+6: ['ADD', 'q', '']
+7: ['ADD', 'f', '']
+8: ['ADD', 'n', '']
+9: ['ADD', 'e', '']
+10: ['ADD', 'i', '']
+11: ['ADD', 'Y', '']
+12: ['DEBUG', '', '']
+10 of 10 >>> o, u, r, e, q, f, n, e, i, Y
+13: ['ADD', 'P', '']
+14: ['DEBUG', '', '']
+11 of 15 >>> o, u, r, e, q, f, n, e, i, Y, P, None, None, None, None
+15: ['SET', '4', 'k']
+16: ['SET', '12', 'h']
+Error: 12 out of bounds
+17: ['DEBUG', '', '']
+11 of 15 >>> o, u, r, e, k, f, n, e, i, Y, P, None, None, None, None
+18: ['GET', '8', '']
+i
+19: ['GET', '11', '']
+Error: 11 out of bounds
+20: ['INSERT', '21', 'r']
+Error: 21 out of bounds
+21: ['INSERT', '4', 'i']
+22: ['INSERT', '4', 'k']
+23: ['INSERT', '4', 'T']
+24: ['INSERT', '4', 'h']
+25: ['INSERT', '4', 'e']
+26: ['INSERT', '4', 'r']
+27: ['DEBUG', '', '']
+17 of 20 >>> o, u, r, e, r, e, h, T, k, i, k, f, n, e, i, Y, P, None, None, None
+28: ['DELETE', '6', '']
+29: ['DEBUG', '', '']
+16 of 20 >>> o, u, r, e, r, e, T, k, i, k, f, n, e, i, Y, P, None, None, None, None
+30: ['DELETE', '10', '']
+31: ['DEBUG', '', '']
+15 of 15 >>> o, u, r, e, r, e, T, k, i, k, n, e, i, Y, P, None, None, None, None, None
+32: ['DELETE', '11', '']
+33: ['DEBUG', '', '']
+14 of 15 >>> o, u, r, e, r, e, T, k, i, k, n, i, Y, P, None, None, None, None, None, None
+34: ['DELETE', '7', '']
+35: ['DEBUG', '', '']
+13 of 15 >>> o, u, r, e, r, e, T, i, k, n, i, Y, P, None, None, None, None, None, None, None
+36: ['DELETE', '13', '']
+Error: 13 out of bounds
+37: ['DEBUG', '', '']
+13 of 15 >>> o, u, r, e, r, e, T, i, k, n, i, Y, P, None, None, None, None, None, None, None
+38: ['SWAP', '1', '3']
+39: ['SWAP', '7', '8']
+40: ['DEBUG', '', '']
+13 of 15 >>> o, e, r, u, r, e, T, k, i, n, i, Y, P, None, None, None, None, None, None, None
+41: ['SWAP', '0', '13']
+Error: 13 out of bounds
+42: ['DELETE', '10', '']
+43: ['DEBUG', '', '']
+12 of 15 >>> o, e, r, u, r, e, T, k, i, n, Y, P, None, None, None, None, None, None, None, None
+44: ['ADD', 'a', '']
+45: ['ADD', 'O', '']
+46: ['DEBUG', '', '']
+14 of 15 >>> o, e, r, u, r, e, T, k, i, n, Y, P, a, O, None, None, None, None, None, None
+47: ['INSERT', '12', 'u']
+48: ['ADD', '8', 'S']
+49: ['ADD', 'r', '']
+50: ['ADD', 'v', '']
+51: ['ADD', 't', '']
+52: ['ADD', 'i', '']
+53: ['DEBUG', '', '']
+20 of 20 >>> o, e, r, u, r, e, T, k, i, n, Y, P, u, a, O, 8, r, v, t, i
+54: ['INSERT', '25', 'b']
+Error: 25 out of bounds
+55: ['SET', '15', 'l']
+56: ['INSERT', '27', 'j']
+Error: 27 out of bounds
+57: ['DEBUG', '', '']
+20 of 20 >>> o, e, r, u, r, e, T, k, i, n, Y, P, u, a, O, l, r, v, t, i
+58: ['SET', '10', 'D']
+59: ['SWAP', '16', '13']
+60: ['ADD', 'e']
+61: ['INSERT', '20', 'S']
+62: ['DEBUG', '', '']
+22 of 25 >>> o, e, r, u, r, e, T, k, i, n, D, P, u, r, O, l, a, v, t, i, S, e, None, None, None
+63: ['INSERT', '8', 'n']
+64: ['INSERT', '7', 'B']
+65: ['INSERT', '13', 'Y']
+66: ['DEBUG']
+25 of 25 >>> o, e, r, u, r, e, T, B, k, n, i, n, D, Y, P, u, r, O, l, a, v, t, i, S, e
+67: ['SET', '14', 'o']
+68: ['SWAP', '0', '7']
+69: ['SWAP', '2', '9']
+70: ['SWAP', '18', '20']
+71: ['SWAP', '2', '23']
+72: ['SWAP', '8', '12']
+73: ['DEBUG', '', '']
+25 of 25 >>> B, e, S, u, r, e, T, o, D, r, i, n, k, Y, o, u, r, O, v, a, l, t, i, n, e
+         2482 function calls (2457 primitive calls) in 0.005 seconds
+
+   Ordered by: cumulative time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.001    0.001    0.005    0.005 main.py:2(<module>)
+        1    0.000    0.000    0.002    0.002 main.py:9(main)
+        1    0.001    0.001    0.002    0.002 argparse.py:62(<module>)
+        1    0.001    0.001    0.001    0.001 collections.py:1(<module>)
+        1    0.000    0.000    0.001    0.001 argparse.py:1556(__init__)
+        1    0.000    0.000    0.001    0.001 csv.py:4(<module>)
+        1    0.000    0.000    0.000    0.000 heapq.py:31(<module>)
+        8    0.000    0.000    0.000    0.000 re.py:230(_compile)
+        4    0.000    0.000    0.000    0.000 sre_compile.py:567(compile)
+        7    0.000    0.000    0.000    0.000 re.py:192(compile)
+       92    0.000    0.000    0.000    0.000 {method 'writelines' of 'file' objects}
+       18    0.000    0.000    0.000    0.000 array.py:14(debug_print)
+        3    0.000    0.000    0.000    0.000 argparse.py:1182(__init__)
+        2    0.000    0.000    0.000    0.000 argparse.py:1263(add_argument)
+        3    0.000    0.000    0.000    0.000 gettext.py:568(gettext)
+        3    0.000    0.000    0.000    0.000 gettext.py:530(dgettext)
+        4    0.000    0.000    0.000    0.000 sre_parse.py:706(parse)
+      191    0.000    0.000    0.000    0.000 {method 'format' of 'str' objects}
+        3    0.000    0.000    0.000    0.000 gettext.py:464(translation)
+        3    0.000    0.000    0.000    0.000 gettext.py:424(find)
+      5/4    0.000    0.000    0.000    0.000 sre_parse.py:317(_parse_sub)
+        4    0.000    0.000    0.000    0.000 sre_compile.py:552(_code)
+        2    0.000    0.000    0.000    0.000 argparse.py:2326(_get_formatter)
+        2    0.000    0.000    0.000    0.000 argparse.py:154(__init__)
+       14    0.000    0.000    0.000    0.000 array.py:69(insert)
+      6/5    0.000    0.000    0.000    0.000 sre_parse.py:395(_parse)
+        1    0.000    0.000    0.000    0.000 argparse.py:1700(parse_args)
+        1    0.000    0.000    0.000    0.000 argparse.py:1707(parse_known_args)
+       23    0.000    0.000    0.000    0.000 {method 'join' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 argparse.py:1742(_parse_known_args)
+        1    0.000    0.000    0.000    0.000 argparse.py:1810(consume_optional)
+     12/4    0.000    0.000    0.000    0.000 sre_compile.py:64(_compile)
+        6    0.000    0.000    0.000    0.000 gettext.py:132(_expand_lang)
+      363    0.000    0.000    0.000    0.000 array.py:19(<genexpr>)
+        1    0.000    0.000    0.000    0.000 argparse.py:2020(_match_argument)
+        1    0.000    0.000    0.000    0.000 re.py:138(match)
+        4    0.000    0.000    0.000    0.000 sre_compile.py:433(_compile_info)
+        1    0.000    0.000    0.000    0.000 collections.py:26(OrderedDict)
+        2    0.000    0.000    0.000    0.000 argparse.py:1310(add_argument_group)
+        6    0.000    0.000    0.000    0.000 locale.py:363(normalize)
+      231    0.000    0.000    0.000    0.000 array.py:154(reverse_enum)
+       12    0.000    0.000    0.000    0.000 genericpath.py:23(exists)
+        2    0.000    0.000    0.000    0.000 argparse.py:1486(__init__)
+        2    0.000    0.000    0.000    0.000 {open}
+     17/9    0.000    0.000    0.000    0.000 sre_parse.py:151(getwidth)
+       12    0.000    0.000    0.000    0.000 posixpath.py:61(join)
+       47    0.000    0.000    0.000    0.000 sre_parse.py:141(__getitem__)
+       29    0.000    0.000    0.000    0.000 sre_parse.py:212(get)
+       35    0.000    0.000    0.000    0.000 sre_parse.py:193(__next)
+        1    0.000    0.000    0.000    0.000 argparse.py:1789(take_action)
+       19    0.000    0.000    0.000    0.000 array.py:62(add)
+        6    0.000    0.000    0.000    0.000 array.py:99(delete)
+        9    0.000    0.000    0.000    0.000 array.py:123(swap)
+        4    0.000    0.000    0.000    0.000 sre_compile.py:228(_compile_charset)
+       12    0.000    0.000    0.000    0.000 {posix.stat}
+  177/170    0.000    0.000    0.000    0.000 {len}
+       34    0.000    0.000    0.000    0.000 argparse.py:1234(register)
+        1    0.000    0.000    0.000    0.000 argparse.py:2200(_get_values)
+        3    0.000    0.000    0.000    0.000 locale.py:347(_replace_encoding)
+       30    0.000    0.000    0.000    0.000 array.py:36(_check_increase)
+        1    0.000    0.000    0.000    0.000 array.py:2(<module>)
+        1    0.000    0.000    0.000    0.000 argparse.py:2252(_get_value)
+        2    0.000    0.000    0.000    0.000 argparse.py:1680(_add_action)
+        1    0.000    0.000    0.000    0.000 argparse.py:147(HelpFormatter)
+        4    0.000    0.000    0.000    0.000 sre_compile.py:256(_optimize_charset)
+        2    0.000    0.000    0.000    0.000 argparse.py:1508(_add_action)
+       28    0.000    0.000    0.000    0.000 sre_parse.py:137(__len__)
+      186    0.000    0.000    0.000    0.000 {method 'append' of 'list' objects}
+       71    0.000    0.000    0.000    0.000 {isinstance}
+       45    0.000    0.000    0.000    0.000 array.py:26(_check_bounds)
+       74    0.000    0.000    0.000    0.000 {method 'lower' of 'str' objects}
+       39    0.000    0.000    0.000    0.000 {getattr}
+        2    0.000    0.000    0.000    0.000 argparse.py:1400(_get_optional_kwargs)
+        2    0.000    0.000    0.000    0.000 argparse.py:1320(_add_action)
+       12    0.000    0.000    0.000    0.000 UserDict.py:58(get)
+        1    0.000    0.000    0.000    0.000 argparse.py:1126(__call__)
+        1    0.000    0.000    0.000    0.000 argparse.py:1025(_SubParsersAction)
+        2    0.000    0.000    0.000    0.000 argparse.py:573(_format_args)
+       16    0.000    0.000    0.000    0.000 {hasattr}
+        3    0.000    0.000    0.000    0.000 __init__.py:49(normalize_encoding)
+       19    0.000    0.000    0.000    0.000 sre_parse.py:149(append)
+       12    0.000    0.000    0.000    0.000 sre_parse.py:92(__init__)
+        4    0.000    0.000    0.000    0.000 sre_parse.py:189(__init__)
+        8    0.000    0.000    0.000    0.000 sre_parse.py:268(_escape)
+        5    0.000    0.000    0.000    0.000 sre_compile.py:428(_simple)
+       36    0.000    0.000    0.000    0.000 {method 'startswith' of 'str' objects}
+        4    0.000    0.000    0.000    0.000 array.py:143(memcpy)
+       36    0.000    0.000    0.000    0.000 {method 'endswith' of 'str' objects}
+        5    0.000    0.000    0.000    0.000 UserDict.py:18(__getitem__)
+        5    0.000    0.000    0.000    0.000 array.py:83(set)
+        2    0.000    0.000    0.000    0.000 {_csv.register_dialect}
+       18    0.000    0.000    0.000    0.000 {method 'find' of 'str' objects}
+        5    0.000    0.000    0.000    0.000 array.py:135(alloc)
+       19    0.000    0.000    0.000    0.000 {range}
+        1    0.000    0.000    0.000    0.000 argparse.py:1887(consume_positionals)
+       14    0.000    0.000    0.000    0.000 sre_parse.py:206(match)
+        1    0.000    0.000    0.000    0.000 keyword.py:11(<module>)
+        9    0.000    0.000    0.000    0.000 {method 'split' of 'str' objects}
+       39    0.000    0.000    0.000    0.000 {method 'get' of 'dict' objects}
+        1    0.000    0.000    0.000    0.000 csv.py:73(DictReader)
+        2    0.000    0.000    0.000    0.000 argparse.py:1435(_pop_action_class)
+        4    0.000    0.000    0.000    0.000 {_sre.compile}
+       29    0.000    0.000    0.000    0.000 {min}
+        8    0.000    0.000    0.000    0.000 sre_compile.py:546(isstring)
+        5    0.000    0.000    0.000    0.000 argparse.py:95(_callable)
+        5    0.000    0.000    0.000    0.000 {method 'match' of '_sre.SRE_Pattern' objects}
+        3    0.000    0.000    0.000    0.000 argparse.py:1439(_get_handler)
+        5    0.000    0.000    0.000    0.000 argparse.py:1238(_registry_get)
+        2    0.000    0.000    0.000    0.000 array.py:91(get)
+        2    0.000    0.000    0.000    0.000 argparse.py:765(__init__)
+       12    0.000    0.000    0.000    0.000 UserDict.py:70(__contains__)
+        1    0.000    0.000    0.000    0.000 argparse.py:2039(_match_arguments_partial)
+       10    0.000    0.000    0.000    0.000 {method 'replace' of 'str' objects}
+        4    0.000    0.000    0.000    0.000 {method 'find' of 'bytearray' objects}
+        1    0.000    0.000    0.000    0.000 collections.py:395(Counter)
+       40    0.000    0.000    0.000    0.000 {method 'setdefault' of 'dict' objects}
+        1    0.000    0.000    0.000    0.000 argparse.py:807(__init__)
+        1    0.000    0.000    0.000    0.000 argparse.py:1538(ArgumentParser)
+        1    0.000    0.000    0.000    0.000 csv.py:57(excel)
+        1    0.000    0.000    0.000    0.000 argparse.py:983(__init__)
+        1    0.000    0.000    0.000    0.000 argparse.py:1484(_ArgumentGroup)
+        2    0.000    0.000    0.000    0.000 argparse.py:199(__init__)
+        1    0.000    0.000    0.000    0.000 argparse.py:836(__call__)
+        1    0.000    0.000    0.000    0.000 sre_parse.py:85(closegroup)
+        1    0.000    0.000    0.000    0.000 argparse.py:1000(_VersionAction)
+        5    0.000    0.000    0.000    0.000 array.py:49(_check_decrease)
+        1    0.000    0.000    0.000    0.000 array.py:7(__init__)
+        1    0.000    0.000    0.000    0.000 argparse.py:1180(_ActionsContainer)
+        4    0.000    0.000    0.000    0.000 {method 'pop' of 'dict' objects}
+        2    0.000    0.000    0.000    0.000 argparse.py:557(_metavar_formatter)
+        1    0.000    0.000    0.000    0.000 posixpath.py:112(basename)
+        2    0.000    0.000    0.000    0.000 argparse.py:566(format)
+        1    0.000    0.000    0.000    0.000 argparse.py:112(_AttributeHolder)
+        1    0.000    0.000    0.000    0.000 csv.py:26(Dialect)
+        1    0.000    0.000    0.000    0.000 {method 'rfind' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 argparse.py:880(_StoreFalseAction)
+        5    0.000    0.000    0.000    0.000 {method 'extend' of 'list' objects}
+        1    0.000    0.000    0.000    0.000 array.py:2(Array)
+        1    0.000    0.000    0.000    0.000 sre_parse.py:74(opengroup)
+        2    0.000    0.000    0.000    0.000 argparse.py:2055(_parse_optional)
+        4    0.000    0.000    0.000    0.000 {ord}
+        1    0.000    0.000    0.000    0.000 argparse.py:629(RawDescriptionHelpFormatter)
+        1    0.000    0.000    0.000    0.000 argparse.py:863(_StoreTrueAction)
+        1    0.000    0.000    0.000    0.000 csv.py:166(Sniffer)
+        1    0.000    0.000    0.000    0.000 {_csv.reader}
+        5    0.000    0.000    0.000    0.000 {max}
+        1    0.000    0.000    0.000    0.000 argparse.py:651(ArgumentDefaultsHelpFormatter)
+        1    0.000    0.000    0.000    0.000 argparse.py:1122(__init__)
+        1    0.000    0.000    0.000    0.000 argparse.py:2156(_get_nargs_pattern)
+        2    0.000    0.000    0.000    0.000 {method 'remove' of 'list' objects}
+        1    0.000    0.000    0.000    0.000 argparse.py:1027(_ChoicesPseudoAction)
+        1    0.000    0.000    0.000    0.000 argparse.py:197(_Section)
+        4    0.000    0.000    0.000    0.000 sre_parse.py:139(__delitem__)
+        2    0.000    0.000    0.000    0.000 argparse.py:1448(_check_conflict)
+        1    0.000    0.000    0.000    0.000 argparse.py:1109(FileType)
+        1    0.000    0.000    0.000    0.000 csv.py:127(DictWriter)
+        1    0.000    0.000    0.000    0.000 argparse.py:1692(_get_positional_actions)
+        1    0.000    0.000    0.000    0.000 argparse.py:714(Action)
+        9    0.000    0.000    0.000    0.000 {method 'translate' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 {method 'setter' of 'property' objects}
+        1    0.000    0.000    0.000    0.000 {method 'group' of '_sre.SRE_Match' objects}
+        1    0.000    0.000    0.000    0.000 {zip}
+        5    0.000    0.000    0.000    0.000 sre_parse.py:145(__setitem__)
+        2    0.000    0.000    0.000    0.000 {method 'add' of 'set' objects}
+        4    0.000    0.000    0.000    0.000 sre_parse.py:67(__init__)
+        6    0.000    0.000    0.000    0.000 {method 'reverse' of 'list' objects}
+        2    0.000    0.000    0.000    0.000 {method 'lstrip' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 argparse.py:1518(_MutuallyExclusiveGroup)
+        1    0.000    0.000    0.000    0.000 argparse.py:1153(Namespace)
+        2    0.000    0.000    0.000    0.000 {setattr}
+        1    0.000    0.000    0.000    0.000 argparse.py:685(ArgumentError)
+        1    0.000    0.000    0.000    0.000 csv.py:67(excel_tab)
+        1    0.000    0.000    0.000    0.000 argparse.py:840(_StoreConstAction)
+        4    0.000    0.000    0.000    0.000 {method 'items' of 'dict' objects}
+        1    0.000    0.000    0.000    0.000 argparse.py:934(_AppendConstAction)
+        3    0.000    0.000    0.000    0.000 {method 'index' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 argparse.py:1160(__init__)
+        2    0.000    0.000    0.000    0.000 {iter}
+        1    0.000    0.000    0.000    0.000 argparse.py:805(_StoreAction)
+        1    0.000    0.000    0.000    0.000 argparse.py:981(_HelpAction)
+        1    0.000    0.000    0.000    0.000 argparse.py:960(_CountAction)
+        1    0.000    0.000    0.000    0.000 argparse.py:640(RawTextHelpFormatter)
+        1    0.000    0.000    0.000    0.000 argparse.py:2277(_check_value)
+        1    0.000    0.000    0.000    0.000 argparse.py:705(ArgumentTypeError)
+        1    0.000    0.000    0.000    0.000 argparse.py:897(_AppendAction)
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+
+

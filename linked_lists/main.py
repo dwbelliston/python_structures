@@ -4,6 +4,7 @@ import csv
 import sys
 import argparse
 from linked_api import LinkedList
+import cProfile
 
 
 def main(arguments):
