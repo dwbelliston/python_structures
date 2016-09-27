@@ -1,4 +1,10 @@
-3 >>> pizza, wings, taters
-Error: Index 1 out of bounds
+8 >>> Buzzer, Buzzer, Buzzer, Buzzer, Buzzer, Buzzer, Buzzer, Buzzer
+Error: Index 8 out of bounds
+Error: Index 7 out of bounds
+Error: Index 6 out of bounds
+Error: Index 5 out of bounds
+Error: Index 4 out of bounds
+Error: Index 3 out of bounds
+Error: Index 2 out of bounds
 Error: Index 1 out of bounds
 0 >>> 
