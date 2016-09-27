@@ -1,10 +1,116 @@
+0: ['DEBUG', '', 'Print callahead; waiting; appetizers; buzzers; songs']
+0 >>> None >>> None
+0 >>> None >>> None
+0 >>> None
 8 >>> Buzzer, Buzzer, Buzzer, Buzzer, Buzzer, Buzzer, Buzzer, Buzzer
+3 >>> Song 1, Song 2, Song 3
+1: ['SONG', '', 'Start the next song using the songs iterator: print the song name.']
+Song 12: ['APPETIZER_READY', 'Shrimp', 'The shrimp appetizer is ready']
+3: ['APPETIZER_READY', 'Wings', 'The wings appetizer is ready']
+4: ['SEAT', '', 'Seat the next party: add buzzer back to stack; remove from waiting list; print the party name']
+Error: Index 0 out of bounds
+Error: Index 0 out of bounds
+5: ['DEBUG', '', 'Print callahead; waiting; appetizers; buzzers; songs']
+0 >>> None >>> None
+0 >>> None >>> None
+2 >>> Shrimp, Wings
+9 >>> Buzzer, Buzzer, Buzzer, Buzzer, Buzzer, Buzzer, Buzzer, Buzzer, Buzzer
+3 >>> Song 1, Song 2, Song 3
+6: ['ARRIVE', 'Anderson', 'The Anderson party shows up']
+Error: Index 9 out of bounds
+7: ['APPETIZER', '', 'Give next appetizer to the last 3 waiting: print appetizer; print the three party names in reverse order']
+8: ['CALL', 'Bradshaw', 'The Bradshaw party calls ahead']
+9: ['CALL', 'Cooper', 'The Cooper party calls ahead']
+10: ['ARRIVE', 'Dean', 'The Dean party shows up']
 Error: Index 8 out of bounds
+11: ['SONG', '', 'Start the next song using the songs iterator: print the song name.']
+Song 212: ['ARRIVE', 'Erikson', 'The Erikson party shows up']
 Error: Index 7 out of bounds
+13: ['DEBUG', '', 'Print callahead; waiting; appetizers; buzzers; songs']
+2 >>> Bradshaw, Cooper >>> Cooper, Bradshaw
+3 >>> Anderson, Dean, Erikson >>> Erikson, Dean, Anderson
+1 >>> Wings
+6 >>> Buzzer, Buzzer, Buzzer, Buzzer, Buzzer, Buzzer
+3 >>> Song 1, Song 2, Song 3
+14: ['ARRIVE', 'Cooper', 'The Cooper party shows up and moves to the waiting list (up to 5 spots in)']
 Error: Index 6 out of bounds
-Error: Index 5 out of bounds
-Error: Index 4 out of bounds
-Error: Index 3 out of bounds
-Error: Index 2 out of bounds
+15: ['DEBUG', '', 'Print callahead; waiting; appetizers; buzzers; songs']
+2 >>> Bradshaw, Cooper >>> Cooper, Bradshaw
+4 >>> Cooper, Anderson, Dean, Erikson >>> Erikson, Dean, Anderson, Cooper
+1 >>> Wings
+5 >>> Buzzer, Buzzer, Buzzer, Buzzer, Buzzer
+3 >>> Song 1, Song 2, Song 3
+16: ['SEAT', '', 'Seat the next party: add buzzer back to stack; remove from waiting list; print the party name']
+Cooper
+17: ['APPETIZER', '', 'Give next appetizer to the last 3 waiting: print appetizer; print the three party names in reverse order']
 Error: Index 1 out of bounds
+18: ['DEBUG', '', 'Print callahead; waiting; appetizers; buzzers; songs']
+2 >>> Bradshaw, Cooper >>> Cooper, Bradshaw
+3 >>> Anderson, Dean, Erikson >>> Erikson, Dean, Anderson
 0 >>> 
+6 >>> Buzzer, Buzzer, Buzzer, Buzzer, Buzzer, Buzzer
+3 >>> Song 1, Song 2, Song 3
+19: ['SONG', '', 'Start the next song using the songs iterator: print the song name.']
+Song 320: ['SEAT', '', 'Seat the next party: add buzzer back to stack; remove from waiting list; print the party name']
+Anderson
+21: ['DEBUG', '', 'Print callahead; waiting; appetizers; buzzers; songs']
+2 >>> Bradshaw, Cooper >>> Cooper, Bradshaw
+2 >>> Dean, Erikson >>> Erikson, Dean
+0 >>> 
+7 >>> Buzzer, Buzzer, Buzzer, Buzzer, Buzzer, Buzzer, Buzzer
+3 >>> Song 1, Song 2, Song 3
+22: ['CALL', 'Fredericks', 'The Fredericks party calls ahead']
+23: ['APPETIZER', '', 'Give next appetizer to the last 3 waiting: print appetizer; print the three party names in reverse order']
+24: ['SEAT', '', 'Seat the next party: add buzzer back to stack; remove from waiting list; print the party name']
+Dean
+25: ['APPETIZER_READY', 'Cheese', 'The cheese appetizer is ready']
+26: ['DEBUG', '', 'Print callahead; waiting; appetizers; buzzers; songs']
+3 >>> Bradshaw, Cooper, Fredericks >>> Fredericks, Cooper, Bradshaw
+1 >>> Erikson >>> Erikson
+1 >>> Cheese
+8 >>> Buzzer, Buzzer, Buzzer, Buzzer, Buzzer, Buzzer, Buzzer, Buzzer
+3 >>> Song 1, Song 2, Song 3
+27: ['ARRIVE', 'Gehling', 'The Gehling party has arrived']
+Error: Index 8 out of bounds
+28: ['SONG', '', 'Start the next song using the songs iterator: print the song name.']
+Song 129: ['ARRIVE', 'Hansen', 'The Hansen party has arrived']
+Error: Index 7 out of bounds
+30: ['APPETIZER_READY', 'Chips', 'The chips appetizer is ready']
+31: ['APPETIZER', '', 'Give next appetizer to the last 3 waiting: print appetizer; print the three party names in reverse order']
+32: ['ARRIVE', 'Indy', 'The Indy party has arrived']
+Error: Index 6 out of bounds
+33: ['ARRIVE', 'Jackson', 'The Jackson party has arrived']
+Error: Index 5 out of bounds
+34: ['ARRIVE', 'Kane', 'The Kane party has arrived']
+Error: Index 4 out of bounds
+35: ['ARRIVE', 'Fredericks', 'The Fredericks party has arrived']
+Error: Index 3 out of bounds
+36: ['APPETIZER_READY', 'Chocolate', 'The chocolate appetizer is ready']
+37: ['DEBUG', '', 'Print callahead; waiting; appetizers; buzzers; songs']
+3 >>> Bradshaw, Cooper, Fredericks >>> Fredericks, Cooper, Bradshaw
+7 >>> Erikson, Fredericks, Gehling, Hansen, Indy, Jackson, Kane >>> Kane, Jackson, Indy, Hansen, Gehling, Fredericks, Erikson
+2 >>> Chips, Chocolate
+2 >>> Buzzer, Buzzer
+3 >>> Song 1, Song 2, Song 3
+38: ['SONG', '', 'Start the next song using the songs iterator: print the song name.']
+Song 239: ['APPETIZER', '', 'Give next appetizer to the last 3 waiting: print appetizer; print the three party names in reverse order']
+40: ['APPETIZER', '', 'Give next appetizer to the last 3 waiting: print appetizer; print the three party names in reverse order']
+Error: Index 1 out of bounds
+41: ['LEAVE', 'Indy', 'The Indy party has decided to go elsewhere']
+42: ['DEBUG', '', 'Print callahead; waiting; appetizers; buzzers; songs']
+3 >>> Bradshaw, Cooper, Fredericks >>> Fredericks, Cooper, Bradshaw
+6 >>> Erikson, Fredericks, Hansen, Indy, Jackson, Kane >>> Kane, Jackson, Indy, Hansen, Fredericks, Erikson
+0 >>> 
+3 >>> Buzzer, Buzzer, Buzzer
+3 >>> Song 1, Song 2, Song 3
+43: ['SONG', '', 'Start the next song using the songs iterator: print the song name.']
+Song 344: ['SEAT', '', 'Seat the next party: add buzzer back to stack; remove from waiting list; print the party name']
+Erikson
+45: ['SEAT', '', 'Seat the next party: add buzzer back to stack; remove from waiting list; print the party name']
+Fredericks
+46: ['DEBUG', '', 'Print callahead; waiting; appetizers; buzzers; songs']
+3 >>> Bradshaw, Cooper, Fredericks >>> Fredericks, Cooper, Bradshaw
+4 >>> Hansen, Indy, Jackson, Kane >>> Kane, Jackson, Indy, Hansen
+0 >>> 
+5 >>> Buzzer, Buzzer, Buzzer, Buzzer, Buzzer
+3 >>> Song 1, Song 2, Song 3

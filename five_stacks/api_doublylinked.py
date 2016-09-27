@@ -70,6 +70,21 @@ class DoublyLinkedList(object):
         return goal_node
 
 
+    def _search_node(self, value):
+        node = self.head
+        found = False
+        goal_index = 0
+        while node and not found:
+            print(node.value)
+            if node.value == value:
+                found = True
+
+            node = node.next
+            goal_index += 1
+
+        return goal_index - 1
+
+
     def add(self, item):
         '''Adds an item to the end of the linked list.'''
         new_node = Node(item)

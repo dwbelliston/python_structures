@@ -31,7 +31,7 @@ class Queue(object):
         if self.size() > 0:
             next_node = self.list._get_node(0)
             self.list.delete(0)
-            return next_node
+            return next_node.value
         else:
             print('Error: Queue is empty')
 

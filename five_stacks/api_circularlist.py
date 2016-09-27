@@ -35,21 +35,6 @@ class CircularLinkedList(object):
         print('{} >>> {}'.format(self.size, content))
         self.file_write.writelines('{} >>> {}\n'.format(self.size, content))
 
-        print('-----')
-        print(self.head)
-        print(self.head.next)
-        print(self.head.next.next)
-        print(self.head.next.next.next)
-        print(self.head.next.next.next.next)
-        print(self.head.next.next.next.next.next)
-        print(self.head.next.next.next.next.next.next)
-        print(self.head.next.next.next.next.next.next.next)
-        print(self.head.next.next.next.next.next.next.next.next)
-        print(self.head.next.next.next.next.next.next.next.next.next)
-        print(self.head.next.next.next.next.next.next.next.next.next.next)
-        print(self.head.next.next.next.next.next.next.next.next.next.next.next)
-
-
 
     def debug_cycle(self, count):
         '''Prints a representation of the entire cycled list up to count items'''
@@ -202,10 +187,11 @@ class Node(object):
 ###   An iterator for the circular list
 
 class CircularLinkedListIterator(object):
-    def __init__(self, circular_list):
+    def __init__(self, circular_list, file_write):
         '''Starts the iterator on the given circular list.'''
         self.list = circular_list
         self.position = 0
+        self.file_write = file_write
 
     def _has_next(self):
         '''Returns whether there is another value in the list.'''
@@ -220,6 +206,9 @@ class CircularLinkedListIterator(object):
         else:
             next_song = self.list._get_node(0)
             self.position = 1
+
+        print(next_song.value)
+        self.file_write.writelines(next_song.value)
         return next_song
 
 
