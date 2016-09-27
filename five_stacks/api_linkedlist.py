@@ -27,9 +27,8 @@ class LinkedList(object):
             # print(current.value)
             content.append(current.value)
             current = current.get_next()
-
         content = ', '.join(str(x) for x in reverse_gen(content))
-        # print('{} >>> {}'.format(self.size, content))
+        print('{} >>> {}'.format(self.size, content))
         self.file_write.writelines('{} >>> {}\n'.format(self.size, content))
 
     def _get_index(self, index):

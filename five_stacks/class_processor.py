@@ -33,6 +33,17 @@ class Processor(object):
             # split and handle the commands here
             # print(line)
 
+        self.appetizers.enqueue('pizza')
+        self.appetizers.enqueue('wings')
+        self.appetizers.enqueue('taters')
+        self.appetizers.debug_print()
+        self.appetizers.dequeue()
+        self.appetizers.dequeue()
+        self.appetizers.dequeue()
+        self.appetizers.dequeue()
+        self.appetizers.enqueue('da')
+        self.appetizers.dequeue()
+        self.appetizers.debug_print()
 
 
     def debug(self):

@@ -10,17 +10,16 @@ class Queue(object):
     '''
 
     def __init__(self, file_write):
-        '''Constructor'''        
-        self.file_write = file_write
-
+        '''Constructor'''
+        self.list = LinkedList(file_write)
 
     def debug_print(self):
         '''Prints a representation of the entire queue.'''
-
+        self.list.debug_print()
 
     def enqueue(self, item):
         '''Adds an item to the end of the queue'''
-
+        self.list.add(item)
 
     def dequeue(self):
         '''
@@ -29,6 +28,13 @@ class Queue(object):
             2. Delete the node from the list.
             3. Return the value of the node.
         '''
+        if self.size() > 0:
+            next_node = self.list._get_node(0)
+            self.list.delete(0)
+            return next_node
+        else:
+            print('Error: Queue is empty')
 
     def size(self):
         '''Returns the number of items in the queue'''
+        return self.list.size

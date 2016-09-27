@@ -1,0 +1,4 @@
+3 >>> pizza, wings, taters
+Error: Index 1 out of bounds
+Error: Index 1 out of bounds
+0 >>> 
