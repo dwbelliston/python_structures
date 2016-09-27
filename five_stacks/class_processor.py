@@ -20,7 +20,7 @@ class Processor(object):
         self.buzzers.push('Buzzer')
         self.buzzers.push('Buzzer')
         self.buzzers.push('Buzzer')
-        self.songs = CircularLinkedList()
+        self.songs = CircularLinkedList(output_file)
         self.songs.add('Song 1')
         self.songs.add('Song 2')
         self.songs.add('Song 3')
@@ -33,17 +33,6 @@ class Processor(object):
             # split and handle the commands here
             # print(line)
 
-        self.callahead.add('1')
-        self.callahead.add('2')
-        self.callahead.add('3')
-        self.callahead.insert(0, 'a')
-        self.callahead.insert(1, 'b')
-        self.callahead.debug_print()
-        self.callahead.swap(0, 4)
-        self.callahead.swap(1, 3)
-        self.callahead.delete(0)
-        self.callahead.set(3, 'E')
-        self.callahead.debug_print()
 
 
     def debug(self):
