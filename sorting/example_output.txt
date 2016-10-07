@@ -1,0 +1,203 @@
+INDIVIDUAL BOOKS > 2%
+1 Nephi,the,2141,8.1
+1 Nephi,and,1659,6.3
+1 Nephi,of,1334,5.1
+1 Nephi,that,699,2.7
+1 Nephi,i,576,2.2
+1 Nephi,to,574,2.2
+
+2 Nephi,the,2415,7.9
+2 Nephi,and,1755,5.7
+2 Nephi,of,1415,4.6
+2 Nephi,shall,815,2.7
+2 Nephi,that,628,2.1
+
+Jacob,the,743,7.9
+Jacob,and,563,6.0
+Jacob,of,413,4.4
+Jacob,that,253,2.7
+Jacob,i,211,2.2
+
+Enos,and,89,7.4
+Enos,the,68,5.7
+Enos,i,48,4.0
+Enos,of,45,3.8
+Enos,in,29,2.4
+Enos,to,27,2.2
+Enos,my,25,2.1
+Enos,that,25,2.1
+
+Jarom,the,78,10.2
+Jarom,and,57,7.4
+Jarom,of,48,6.2
+Jarom,to,21,2.7
+Jarom,they,19,2.5
+
+Omni,the,117,8.0
+Omni,and,100,6.8
+Omni,of,74,5.1
+Omni,i,35,2.4
+Omni,to,35,2.4
+Omni,that,31,2.1
+
+Words of Mormon,the,63,7.1
+Words of Mormon,and,49,5.5
+Words of Mormon,of,49,5.5
+Words of Mormon,to,26,2.9
+Words of Mormon,i,22,2.5
+
+Mosiah,the,2038,6.3
+Mosiah,and,2028,6.3
+Mosiah,of,1300,4.0
+Mosiah,that,916,2.8
+Mosiah,to,910,2.8
+
+Alma,the,6138,7.0
+Alma,and,4789,5.4
+Alma,of,3936,4.5
+Alma,to,2522,2.9
+Alma,that,2168,2.5
+
+Helaman,the,1544,7.3
+Helaman,and,1384,6.5
+Helaman,of,914,4.3
+Helaman,to,530,2.5
+Helaman,that,529,2.5
+
+3 Nephi,the,2073,6.9
+3 Nephi,and,1923,6.4
+3 Nephi,of,1101,3.7
+3 Nephi,that,744,2.5
+
+4 Nephi,and,190,9.4
+4 Nephi,the,157,7.7
+4 Nephi,of,91,4.5
+4 Nephi,to,53,2.6
+4 Nephi,did,51,2.5
+4 Nephi,in,47,2.3
+4 Nephi,they,45,2.2
+4 Nephi,were,45,2.2
+
+Mormon,the,778,7.9
+Mormon,and,637,6.5
+Mormon,of,441,4.5
+Mormon,that,239,2.4
+Mormon,to,232,2.4
+
+Ether,the,1327,7.7
+Ether,and,1198,7.0
+Ether,of,781,4.5
+Ether,that,453,2.6
+Ether,to,421,2.4
+
+Moroni,the,390,6.1
+Moroni,and,351,5.5
+Moroni,of,298,4.6
+Moroni,that,143,2.2
+
+MASTER LIST > 2%
+Jarom,the,78,10.2
+4 Nephi,and,190,9.4
+1 Nephi,the,2141,8.1
+Omni,the,117,8.0
+2 Nephi,the,2415,7.9
+Mormon,the,778,7.9
+Jacob,the,743,7.9
+Ether,the,1327,7.7
+4 Nephi,the,157,7.7
+Enos,and,89,7.4
+Jarom,and,57,7.4
+Helaman,the,1544,7.3
+Words of Mormon,the,63,7.1
+Alma,the,6138,7.0
+Ether,and,1198,7.0
+3 Nephi,the,2073,6.9
+Omni,and,100,6.8
+Helaman,and,1384,6.5
+Mormon,and,637,6.5
+3 Nephi,and,1923,6.4
+Mosiah,the,2038,6.3
+Mosiah,and,2028,6.3
+1 Nephi,and,1659,6.3
+Jarom,of,48,6.2
+Moroni,the,390,6.1
+Jacob,and,563,6.0
+2 Nephi,and,1755,5.7
+Enos,the,68,5.7
+Moroni,and,351,5.5
+Words of Mormon,and,49,5.5
+Words of Mormon,of,49,5.5
+Alma,and,4789,5.4
+1 Nephi,of,1334,5.1
+Omni,of,74,5.1
+2 Nephi,of,1415,4.6
+Moroni,of,298,4.6
+Alma,of,3936,4.5
+Ether,of,781,4.5
+Mormon,of,441,4.5
+4 Nephi,of,91,4.5
+Jacob,of,413,4.4
+Helaman,of,914,4.3
+Mosiah,of,1300,4.0
+Enos,i,48,4.0
+Enos,of,45,3.8
+3 Nephi,of,1101,3.7
+Alma,to,2522,2.9
+Words of Mormon,to,26,2.9
+Mosiah,that,916,2.8
+Mosiah,to,910,2.8
+2 Nephi,shall,815,2.7
+1 Nephi,that,699,2.7
+Jacob,that,253,2.7
+Jarom,to,21,2.7
+Ether,that,453,2.6
+4 Nephi,to,53,2.6
+Alma,that,2168,2.5
+3 Nephi,that,744,2.5
+Helaman,to,530,2.5
+Helaman,that,529,2.5
+4 Nephi,did,51,2.5
+Words of Mormon,i,22,2.5
+Jarom,they,19,2.5
+Ether,to,421,2.4
+Mormon,that,239,2.4
+Mormon,to,232,2.4
+Omni,i,35,2.4
+Omni,to,35,2.4
+Enos,in,29,2.4
+4 Nephi,in,47,2.3
+1 Nephi,i,576,2.2
+1 Nephi,to,574,2.2
+Jacob,i,211,2.2
+Moroni,that,143,2.2
+4 Nephi,they,45,2.2
+4 Nephi,were,45,2.2
+Enos,to,27,2.2
+2 Nephi,that,628,2.1
+Omni,that,31,2.1
+Enos,my,25,2.1
+Enos,that,25,2.1
+
+MASTER LIST == christ
+Moroni,christ,76,1.2
+4 Nephi,christ,16,0.8
+Words of Mormon,christ,4,0.5
+Mormon,christ,36,0.4
+Jacob,christ,32,0.3
+2 Nephi,christ,63,0.2
+3 Nephi,christ,46,0.2
+Enos,christ,3,0.2
+Alma,christ,97,0.1
+Mosiah,christ,36,0.1
+Helaman,christ,19,0.1
+Ether,christ,16,0.1
+Omni,christ,2,0.1
+Jarom,christ,1,0.1
+
+FULL TEXT > 2%
+Book of Mormon,the,20070,7.2
+Book of Mormon,and,16772,6.0
+Book of Mormon,of,12240,4.4
+Book of Mormon,that,6888,2.5
+Book of Mormon,to,6715,2.4
+
