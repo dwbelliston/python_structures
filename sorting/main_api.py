@@ -3,6 +3,7 @@ import re
 from worddata import WordData
 from sorts.bubble import bubble_sort
 from sorts.insertion import insertion_sort
+from sorts.selection import selection_sort
 
 FILENAMES = [
     # [ '1 Nephi',         '01-1 Nephi.txt' ],
@@ -65,13 +66,14 @@ def analyze_text(book, text):
     # 2. highest count (if percentages are equal) [descending]
     # 3. lowest alpha order (if percentages and count are equal) [ascending]
     sort_by_order = [
-        {'name': 'percent', 'dir': 'asc'},
+        {'name': 'percent', 'dir': 'desc'},
         {'name': 'count', 'dir': 'desc'},
-        {'name': 'word', 'dir': 'desc'}
+        {'name': 'word', 'dir': 'asc'}
     ]
 
     # sorted_data = bubble_sort(word_data, sort_by_order)
-    sorted_data = insertion_sort(word_data, sort_by_order)
+    # sorted_data = insertion_sort(word_data, sort_by_order)
+    sorted_data = selection_sort(word_data, sort_by_order)
 
     print('SORTED::')
     for i in sorted_data:

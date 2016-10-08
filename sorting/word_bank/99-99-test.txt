@@ -1,7 +1,5 @@
 test_book
 
-aa
-aa
 bb
 bb
 ccc

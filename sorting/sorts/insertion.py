@@ -11,11 +11,9 @@ import operator
 def insertion_sort(list_sort, sortby_order):
     print('Insertion! on:{} '.format(sortby_order))
     for i in range(1, len(list_sort)):
-
         bool_looking = True
         # Check to exchange to the left until it inserts
         while i > 0 and bool_looking:
-
             bool_keep_sorting = True
             sortby_index = 0
             while bool_keep_sorting:
@@ -28,6 +26,7 @@ def insertion_sort(list_sort, sortby_order):
 
                 # If smaller than left, exchange places
                 if op_funx(insert_val, prev_val):
+                    # prev_val, insert_val = insert_val, prev_val
                     list_sort[i - 1], list_sort[i] = list_sort[i], list_sort[i - 1]
                 # Check if next sort is needed
                 elif operator.eq(insert_val, prev_val):
@@ -37,7 +36,7 @@ def insertion_sort(list_sort, sortby_order):
                     else:
                         # Exhausted all sortby vars, deep equals
                         bool_keep_sorting = False
-                # Values stay in place
+                # Values stay in place, stop sorting
                 else:
                     bool_keep_sorting = False
 
