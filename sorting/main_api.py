@@ -11,8 +11,8 @@ FILENAMES = [
     # [ 'Jacob',           '03-Jacob.txt' ],
     # [ 'Enos',            '04-Enos.txt' ],
     # [ 'Jarom',           '05-Jarom.txt' ],
-    # [ 'Omni',            '06-Omni.txt' ],
-    # [ 'Words of Mormon', '07-Words of Mormon.txt' ],
+    [ 'Omni',            '06-Omni.txt' ],
+    [ 'Words of Mormon', '07-Words of Mormon.txt' ],
     # [ 'Mosiah',          '08-Mosiah.txt' ],
     # [ 'Alma',            '09-Alma.txt' ],
     # [ 'Helaman',         '10-Helaman.txt' ],
@@ -21,7 +21,7 @@ FILENAMES = [
     # [ 'Mormon',          '13-Mormon.txt' ],
     # [ 'Ether',           '14-Ether.txt' ],
     # [ 'Moroni',          '15-Moroni.txt' ],
-    ['test',          '99-99-test.txt'],
+    # ['test',          '99-99-test.txt'],
 ]
 
 
@@ -77,7 +77,8 @@ def analyze_text(book, text):
 
     print('SORTED::')
     for i in sorted_data:
-        print(i)
+        if i.percent > 2:
+            print(i)
 
     return sorted_data
 
