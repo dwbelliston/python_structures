@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 import re
 from worddata import WordData
-from sorting_api import bubble_sort
+from sorts.bubble import bubble_sort
+from sorts.insertion import insertion_sort
 
 FILENAMES = [
     # [ '1 Nephi',         '01-1 Nephi.txt' ],
@@ -19,7 +20,7 @@ FILENAMES = [
     # [ 'Mormon',          '13-Mormon.txt' ],
     # [ 'Ether',           '14-Ether.txt' ],
     # [ 'Moroni',          '15-Moroni.txt' ],
-    [ 'test',          '99-99-test.txt'],
+    ['test',          '99-99-test.txt'],
 ]
 
 
@@ -53,7 +54,6 @@ def analyze_text(book, text):
 
     # create a WordData item for each word in our list of words
     word_data = []
-    print(text_total_count)
     for k, v in word_counts.items():
         wd = WordData(book, k, v)
         # Set percent based on total text word count
@@ -62,14 +62,22 @@ def analyze_text(book, text):
 
     # sort the WordData list using Bubble Sort, Insertion Sort, or Selection Sort:
     # 1. highest percentage [descending]
-    # # PARAMS: List, Variable, Direction
-    sort_by_order = ['percent', 'count', 'word']
-    sorted_percent = bubble_sort(word_data, 'percent', 'desc')
     # 2. highest count (if percentages are equal) [descending]
-
     # 3. lowest alpha order (if percentages and count are equal) [ascending]
+    sort_by_order = [
+        {'name': 'percent', 'dir': 'asc'},
+        {'name': 'count', 'dir': 'desc'},
+        {'name': 'word', 'dir': 'desc'}
+    ]
 
-    # return
+    # sorted_data = bubble_sort(word_data, sort_by_order)
+    sorted_data = insertion_sort(word_data, sort_by_order)
+
+    print('SORTED::')
+    for i in sorted_data:
+        print(i)
+
+    return sorted_data
 
 
 ################################
