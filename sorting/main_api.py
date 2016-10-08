@@ -1,21 +1,25 @@
 #!/usr/bin/env python3
+import re
+from worddata import WordData
+from sorting_api import bubble_sort
 
 FILENAMES = [
-    [ '1 Nephi',         '01-1 Nephi.txt' ],
-    [ '2 Nephi',         '02-2 Nephi.txt' ],
-    [ 'Jacob',           '03-Jacob.txt' ],
-    [ 'Enos',            '04-Enos.txt' ],
-    [ 'Jarom',           '05-Jarom.txt' ],
-    [ 'Omni',            '06-Omni.txt' ],
-    [ 'Words of Mormon', '07-Words of Mormon.txt' ],
-    [ 'Mosiah',          '08-Mosiah.txt' ],
-    [ 'Alma',            '09-Alma.txt' ],
-    [ 'Helaman',         '10-Helaman.txt' ],
-    [ '3 Nephi',         '11-3 Nephi.txt' ],
-    [ '4 Nephi',         '12-4 Nephi.txt' ],
-    [ 'Mormon',          '13-Mormon.txt' ],
-    [ 'Ether',           '14-Ether.txt' ],
-    [ 'Moroni',          '15-Moroni.txt' ],
+    # [ '1 Nephi',         '01-1 Nephi.txt' ],
+    # [ '2 Nephi',         '02-2 Nephi.txt' ],
+    # [ 'Jacob',           '03-Jacob.txt' ],
+    # [ 'Enos',            '04-Enos.txt' ],
+    # [ 'Jarom',           '05-Jarom.txt' ],
+    # [ 'Omni',            '06-Omni.txt' ],
+    # [ 'Words of Mormon', '07-Words of Mormon.txt' ],
+    # [ 'Mosiah',          '08-Mosiah.txt' ],
+    # [ 'Alma',            '09-Alma.txt' ],
+    # [ 'Helaman',         '10-Helaman.txt' ],
+    # [ '3 Nephi',         '11-3 Nephi.txt' ],
+    # [ '4 Nephi',         '12-4 Nephi.txt' ],
+    # [ 'Mormon',          '13-Mormon.txt' ],
+    # [ 'Ether',           '14-Ether.txt' ],
+    # [ 'Moroni',          '15-Moroni.txt' ],
+    [ 'test',          '99-99-test.txt'],
 ]
 
 
@@ -24,20 +28,45 @@ FILENAMES = [
 
 def analyze_text(book, text):
     '''Performs a very naive analysis of the words in the text, returning the SORTED list of WordData items'''
+    print('Analyzing {} ...'.format(book))
     # lowercase the entire text
-
+    text = text.lower()
     # split the text by whitespace to get a list of words
-
+    # # The str.split() method without an argument splits on whitespace:
+    text = text.split()
     # convert each word to the longest run of characters
-    # eliminate any words that are empty after conversion to characters
+    for i, word in enumerate(text):
+        m = re.match(r'(?P<word>[a-z]+)', word)
+        if m:
+            text[i] = m.group('word')
+        else:
+            # eliminate any words that are empty after conversion to characters
+            text.remove(word)
 
+    # will be used to calc percentage
+    text_total_count = len(text)
     # count up the occurance of each word into a dictionary of: word -> count
+    word_counts = dict()
+    for w in text:
+        # .get allows you to specify a default value if the key does not exist.
+        word_counts[w] = word_counts.get(w, 0) + 1
 
     # create a WordData item for each word in our list of words
+    word_data = []
+    print(text_total_count)
+    for k, v in word_counts.items():
+        wd = WordData(book, k, v)
+        # Set percent based on total text word count
+        wd.set_percent(text_total_count)
+        word_data.append(wd)
 
     # sort the WordData list using Bubble Sort, Insertion Sort, or Selection Sort:
     # 1. highest percentage [descending]
+    # # PARAMS: List, Variable, Direction
+    sort_by_order = ['percent', 'count', 'word']
+    sorted_percent = bubble_sort(word_data, 'percent', 'desc')
     # 2. highest count (if percentages are equal) [descending]
+
     # 3. lowest alpha order (if percentages and count are equal) [ascending]
 
     # return
@@ -59,9 +88,13 @@ def print_words(words, threshold=None, word=None):
 
 def main():
     '''Main program'''
-    print('MAIN')
     master = []
     # loop through the filenames and analyze each one
+    for file_info in FILENAMES:
+        with open ('word_bank/{}'.format(file_info[1]), "r") as f:
+            file_data=f.read()
+            analyze_text(file_info[0], file_data)
+
     # after analyzing each file, merge the master and words lists into a single, sorted list (which becomes the new master list)
     print('INDIVIDUAL BOOKS > 2%')
 
