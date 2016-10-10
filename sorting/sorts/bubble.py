@@ -9,7 +9,7 @@ import operator
     bubble_sort(word_data, sort_by_order)
 '''
 def bubble_sort(list_sort, sortby_order):
-    print('Bubbling! on:{} '.format(sortby_order))
+    # print('Bubbling! on:{} '.format(sortby_order))
 
     # Need to pass through n-1 times, start high and go down
     # range(start, stop[, step])

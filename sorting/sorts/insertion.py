@@ -9,7 +9,7 @@ import operator
     insertion_sort(word_data, sort_by_order)
 '''
 def insertion_sort(list_sort, sortby_order):
-    print('Insertion! on:{} '.format(sortby_order))
+    # print('Insertion! on:{} '.format(sortby_order))
     for i in range(1, len(list_sort)):
         bool_looking = True
         # Check to exchange to the left until it inserts

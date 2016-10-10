@@ -4,15 +4,16 @@ from worddata import WordData
 from sorts.bubble import bubble_sort
 from sorts.insertion import insertion_sort
 from sorts.selection import selection_sort
+from merge_api import merge_lists
 
 FILENAMES = [
-    # [ '1 Nephi',         '01-1 Nephi.txt' ],
+    [ '1 Nephi',         '01-1 Nephi.txt' ],
     # [ '2 Nephi',         '02-2 Nephi.txt' ],
     # [ 'Jacob',           '03-Jacob.txt' ],
     # [ 'Enos',            '04-Enos.txt' ],
     # [ 'Jarom',           '05-Jarom.txt' ],
-    [ 'Omni',            '06-Omni.txt' ],
-    [ 'Words of Mormon', '07-Words of Mormon.txt' ],
+    # [ 'Omni',            '06-Omni.txt' ],
+    # [ 'Words of Mormon', '07-Words of Mormon.txt' ],
     # [ 'Mosiah',          '08-Mosiah.txt' ],
     # [ 'Alma',            '09-Alma.txt' ],
     # [ 'Helaman',         '10-Helaman.txt' ],
@@ -30,7 +31,7 @@ FILENAMES = [
 
 def analyze_text(book, text):
     '''Performs a very naive analysis of the words in the text, returning the SORTED list of WordData items'''
-    print('Analyzing {} ...'.format(book))
+    # print('Analyzing {} ...'.format(book))
     # lowercase the entire text
     text = text.lower()
     # split the text by whitespace to get a list of words
@@ -71,14 +72,9 @@ def analyze_text(book, text):
         {'name': 'word', 'dir': 'asc'}
     ]
 
-    # sorted_data = bubble_sort(word_data, sort_by_order)
+    sorted_data = bubble_sort(word_data, sort_by_order)
     # sorted_data = insertion_sort(word_data, sort_by_order)
-    sorted_data = selection_sort(word_data, sort_by_order)
-
-    print('SORTED::')
-    for i in sorted_data:
-        if i.percent > 2:
-            print(i)
+    # sorted_data = selection_sort(word_data, sort_by_order)
 
     return sorted_data
 
@@ -86,12 +82,14 @@ def analyze_text(book, text):
 ################################
 ###   Prints a words list
 
-def print_words(words, threshold=None, word=None):
+def print_words(words, threshold=0.0, word=None):
     '''Prints a list of words'''
     # print the words over the threshold_percent or that match the given word
-
+    for i in words:
+        if i.percent > threshold:
+            print(i)
     # print an empty line
-
+    print('\n')
 
 
 #######################
@@ -100,17 +98,25 @@ def print_words(words, threshold=None, word=None):
 def main():
     '''Main program'''
     master = []
+    filter_threshold = 2.0
+    filter_word = 'christ'
+
+    print('INDIVIDUAL BOOKS > {}%'.format(filter_threshold))
     # loop through the filenames and analyze each one
     for file_info in FILENAMES:
         with open ('word_bank/{}'.format(file_info[1]), "r") as f:
             file_data=f.read()
-            analyze_text(file_info[0], file_data)
+            sorted_text = analyze_text(file_info[0], file_data)
 
-    # after analyzing each file, merge the master and words lists into a single, sorted list (which becomes the new master list)
-    print('INDIVIDUAL BOOKS > 2%')
+        # after analyzing each file:
+        # # print the ind book out
+        print_words(sorted_text, filter_threshold)
+        # # merge the master and words lists into a single, sorted list (which becomes the new master list)
+        master = merge_lists(list(master), sorted_text)
 
     # print each book, word, count, percent in master list with percent over 2
     print('MASTER LIST > 2%')
+    print_words(list(master), filter_threshold)
 
     # print each book, word, count, percent in master list with word == 'christ'
     print('MASTER LIST == christ')

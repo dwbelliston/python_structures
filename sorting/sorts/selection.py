@@ -9,7 +9,7 @@ import operator
     selection_sort(word_data, sort_by_order)
 '''
 def selection_sort(list_sort, sortby_order):
-    print('Selection! on:{} '.format(sortby_order))
+    # print('Selection! on:{} '.format(sortby_order))
 
     # Start at right, place at (n - i) eg: 9, 8, 7 etc..
     # # end at -1 so it hits 0

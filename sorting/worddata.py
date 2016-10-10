@@ -11,8 +11,9 @@ class WordData(object):
         self.percent = None
 
     def __str__(self):
-        return 'Word: [{}] in {} {} times = {}%'.format(
-            self.word, self.book, self.count, self.percent)
+        # 1 Nephi,the,2141,8.1
+        return '{},{},{},{}'.format(
+            self.book, self.word, self.count, self.percent)
 
     def set_percent(self, total):
         self.percent = round(100 * float(self.count)/float(total), 1)
