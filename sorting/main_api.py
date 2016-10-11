@@ -7,21 +7,21 @@ from sorts.selection import selection_sort
 from merge_api import merge_lists
 
 FILENAMES = [
-    [ '1 Nephi',         '01-1 Nephi.txt' ],
-    # [ '2 Nephi',         '02-2 Nephi.txt' ],
-    # [ 'Jacob',           '03-Jacob.txt' ],
-    # [ 'Enos',            '04-Enos.txt' ],
-    # [ 'Jarom',           '05-Jarom.txt' ],
-    # [ 'Omni',            '06-Omni.txt' ],
-    # [ 'Words of Mormon', '07-Words of Mormon.txt' ],
-    # [ 'Mosiah',          '08-Mosiah.txt' ],
-    # [ 'Alma',            '09-Alma.txt' ],
-    # [ 'Helaman',         '10-Helaman.txt' ],
-    # [ '3 Nephi',         '11-3 Nephi.txt' ],
-    # [ '4 Nephi',         '12-4 Nephi.txt' ],
-    # [ 'Mormon',          '13-Mormon.txt' ],
-    # [ 'Ether',           '14-Ether.txt' ],
-    # [ 'Moroni',          '15-Moroni.txt' ],
+    [ '1 Nephi',         '01-1 Nephi.txt'],
+    [ '2 Nephi',         '02-2 Nephi.txt'],
+    [ 'Jacob',           '03-Jacob.txt'],
+    [ 'Enos',            '04-Enos.txt'],
+    [ 'Jarom',           '05-Jarom.txt'],
+    [ 'Omni',            '06-Omni.txt'],
+    [ 'Words of Mormon', '07-Words of Mormon.txt'],
+    [ 'Mosiah',          '08-Mosiah.txt'],
+    [ 'Alma',            '09-Alma.txt'],
+    [ 'Helaman',         '10-Helaman.txt'],
+    [ '3 Nephi',         '11-3 Nephi.txt'],
+    [ '4 Nephi',         '12-4 Nephi.txt'],
+    [ 'Mormon',          '13-Mormon.txt'],
+    [ 'Ether',           '14-Ether.txt'],
+    [ 'Moroni',          '15-Moroni.txt'],
     # ['test',          '99-99-test.txt'],
 ]
 
@@ -86,7 +86,7 @@ def print_words(words, threshold=0.0, word=None):
     '''Prints a list of words'''
     # print the words over the threshold_percent or that match the given word
     for i in words:
-        if i.percent > threshold:
+        if getattr(i, 'percent') > threshold:
             print(i)
     # print an empty line
     print('\n')
@@ -112,11 +112,11 @@ def main():
         # # print the ind book out
         print_words(sorted_text, filter_threshold)
         # # merge the master and words lists into a single, sorted list (which becomes the new master list)
-        master = merge_lists(list(master), sorted_text)
+        master = merge_lists(master, sorted_text)
 
     # print each book, word, count, percent in master list with percent over 2
     print('MASTER LIST > 2%')
-    print_words(list(master), filter_threshold)
+    print_words(master, filter_threshold)
 
     # print each book, word, count, percent in master list with word == 'christ'
     print('MASTER LIST == christ')

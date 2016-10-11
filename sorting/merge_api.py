@@ -1,46 +1,61 @@
 #!/usr/bin/env python3
 
-def merge_lists(list1, list2):
+def merge_lists(list1=[], list2=[], keys=['percent', 'count', 'word']):
     '''Merges two sorted lists into a new, sorted list.  The new list is sorted by percent, count, alpha.'''
-    list1 = iter(list1)
-    list2 = iter(list2)
+    new_master = []
 
-    # check list 1, return all of 2 if no list 1
-    try:
-        value1 = next(list1)
-    except StopIteration:
-        while True:
-            yield next(list2)
+    if not len(list1) or not len(list2):
+        return list1 + list2
 
-    # check list 2, return all of 1 if no list 2
-    try:
-        value2 = next(list2)
-    except StopIteration:
-        yield value1
-        while True:
-            yield next(list1)
+    # both lists have len() at this point
+    val_1 = list1.pop(0)
+    val_2 = list2.pop(0)
 
+    keep_merging = True
 
-    while True:
-        if value1.percent <= value2.percent:
-            # Yield the lower value.
-            yield value1
+    key_index = 0
+
+    while keep_merging:
+
+        # add val_1 if its bigger
+        if getattr(val_1, keys[key_index]) > getattr(val_2, keys[key_index]):
+            key_index = 0
+            # put val_1 in the list
+            new_master.append(val_1)
+            # check if there is more in list1
             try:
-                # Grab the next value from list1.
-                value1 = next(list1)
-            except StopIteration:
-                # list1 is empty.  Yield the last value we received from list2, then
-                # yield the rest of list2.
-                yield value2
-                while True:
-                    yield next(list2)
+                val_1 = list1.pop(0)
+            except IndexError:
+                new_master.extend(list2)
+                keep_merging = False
+
+        # add val_2 if its bigger
+        elif getattr(val_1, keys[key_index]) < getattr(val_2, keys[key_index]):
+            key_index = 0
+            # put val_2 in the list
+            new_master.append(val_2)
+            # check if there is more in list1
+            try:
+                val_2 = list2.pop(0)
+            except IndexError:
+                new_master.extend(list1)
+                keep_merging = False
+
+        # equal, try next level of compare
         else:
-            yield value2
-            try:
-                value2 = next(list2)
+            if key_index < len(keys) - 1:
+                key_index += 1
+            else:
+                # deep equals, just add val_1
+                key_index = 0
 
-            except StopIteration:
-                # list2 is empty.
-                yield value1
-                while True:
-                    yield next(list1)
+                # put val_1 in the list
+                new_master.append(val_1)
+                # check if there is more in list1
+                try:
+                    val_1 = list1.pop(0)
+                except IndexError:
+                    new_master.extend(list2)
+                    keep_merging = False
+
+    return new_master
