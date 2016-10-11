@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
+import copy
+
 from sorters.bubble import bubble_sort
 from sorters.insertion import insertion_sort
 from sorters.selection import selection_sort
 from sorters.native_sort import native_sort
+from sorters.quick_sort import quick_sort
 
 FILENAMES = [
     [ 'list1.txt', 'int'  ],
@@ -23,11 +26,12 @@ class Result:
 
 
 def sort_me(list_data):
-    list_bubbled = bubble_sort(list_data)
-    list_selection = selection_sort(list_data)
-    list_insertion = insertion_sort(list_data)
-    list_native = native_sort(list_data)
-    print(list_bubbled == list_selection == list_insertion == list_native)
+    list_bubbled = bubble_sort(copy.copy(list_data))
+    list_selection = selection_sort(copy.copy(list_data))
+    list_insertion = insertion_sort(copy.copy(list_data))
+    list_quick = quick_sort(copy.copy(list_data))
+    list_native = native_sort(copy.copy(list_data))
+    print(list_bubbled == list_selection == list_insertion == list_quick == list_native)
 
 
 def main():
