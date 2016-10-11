@@ -1,6 +1,8 @@
 import operator
 
 
+# Heavy use of code found here:
+# # http://interactivepython.org/runestone/static/pythonds/SortSearch/TheQuickSort.html
 def quick_sort(list_data):
     quickSortHelper(list_data, 0, len(list_data)-1)
     return list_data
