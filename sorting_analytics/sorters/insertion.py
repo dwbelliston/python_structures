@@ -12,7 +12,7 @@ def insertion_sort(list_data):
             prev_val = list_data[i - 1]
 
             # If smaller than left, exchange places
-            if int(insert_val) <= int(prev_val):
+            if float(insert_val) <= float(prev_val):
                 # prev_val, insert_val = insert_val, prev_val
                 list_data[i - 1], list_data[i] = list_data[i], list_data[i - 1]
 

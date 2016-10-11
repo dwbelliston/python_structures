@@ -15,7 +15,7 @@ def selection_sort(list_data):
                 largest_val = list_data[largest_val_index]
 
                 # Check main operator (>, or <)
-                if int(current_val) >= int(largest_val):
+                if float(current_val) >= float(largest_val):
                     # track the new largest index, and move to next
                     largest_val_index = j
 

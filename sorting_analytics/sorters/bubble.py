@@ -11,7 +11,7 @@ def bubble_sort(list_data):
             next_val = list_data[j + 1]
 
             # Check main operator (>, or <)
-            if int(current_val) >= int(next_val):
+            if float(current_val) >= float(next_val):
                 # Current, Next = Next, Current
                 list_data[j], list_data[j + 1] = list_data[j + 1], list_data[j]
 
