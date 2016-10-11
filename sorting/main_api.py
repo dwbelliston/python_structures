@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import re
+import re, random
 from worddata import WordData
 from sorts.bubble import bubble_sort
 from sorts.insertion import insertion_sort
@@ -72,10 +72,14 @@ def analyze_text(book, text):
         {'name': 'word', 'dir': 'asc'}
     ]
 
+    ran_int = random.randint(0,2)
 
-    # sorted_data = bubble_sort(word_data, sort_by_order)
-    sorted_data = insertion_sort(word_data, sort_by_order)
-    # sorted_data = selection_sort(word_data, sort_by_order)
+    if ran_int == 1:
+        sorted_data = bubble_sort(word_data, sort_by_order)
+    elif ran_int == 2:
+        sorted_data = insertion_sort(word_data, sort_by_order)
+    else:
+        sorted_data = selection_sort(word_data, sort_by_order)
 
     return sorted_data
 
@@ -129,11 +133,18 @@ def main():
 
     # print each book, word, count, percent in master list with word == 'christ'
     print('MASTER LIST == christ')
-    print_words(master, word='christ')
+    print_words(master, word=filter_word)
 
     # read the full text of the BoM and analyze it
     print('FULL TEXT > 2%')
+    full_text = ''
+    for file_info in FILENAMES:
+        with open ('word_bank/{}'.format(file_info[1]), "r") as f:
+            file_data=f.read()
+            full_text += ' ' + file_data
 
+    full_text_sorted = analyze_text('Book Of Mormon', full_text)
+    print_words(full_text_sorted, threshold=filter_threshold)
 
 
 #######################
