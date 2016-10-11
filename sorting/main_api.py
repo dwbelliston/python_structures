@@ -72,8 +72,9 @@ def analyze_text(book, text):
         {'name': 'word', 'dir': 'asc'}
     ]
 
-    sorted_data = bubble_sort(word_data, sort_by_order)
-    # sorted_data = insertion_sort(word_data, sort_by_order)
+
+    # sorted_data = bubble_sort(word_data, sort_by_order)
+    sorted_data = insertion_sort(word_data, sort_by_order)
     # sorted_data = selection_sort(word_data, sort_by_order)
 
     return sorted_data
@@ -82,12 +83,20 @@ def analyze_text(book, text):
 ################################
 ###   Prints a words list
 
-def print_words(words, threshold=0.0, word=None):
+def print_words(words, **kwargs):
     '''Prints a list of words'''
+
     # print the words over the threshold_percent or that match the given word
-    for i in words:
-        if getattr(i, 'percent') > threshold:
-            print(i)
+    if 'threshold' in kwargs:
+        for i in words:
+            if getattr(i, 'percent') > kwargs['threshold']:
+                print(i)
+
+    if 'word' in kwargs:
+        for i in words:
+            if getattr(i, 'word') == kwargs['word']:
+                print(i)
+
     # print an empty line
     print('\n')
 
@@ -110,16 +119,17 @@ def main():
 
         # after analyzing each file:
         # # print the ind book out
-        print_words(sorted_text, filter_threshold)
+        print_words(sorted_text, threshold=filter_threshold)
         # # merge the master and words lists into a single, sorted list (which becomes the new master list)
         master = merge_lists(master, sorted_text)
 
     # print each book, word, count, percent in master list with percent over 2
     print('MASTER LIST > 2%')
-    print_words(master, filter_threshold)
+    print_words(master, threshold=filter_threshold)
 
     # print each book, word, count, percent in master list with word == 'christ'
     print('MASTER LIST == christ')
+    print_words(master, word='christ')
 
     # read the full text of the BoM and analyze it
     print('FULL TEXT > 2%')
