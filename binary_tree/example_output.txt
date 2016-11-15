@@ -1,0 +1,82 @@
+Initial tree:
+c(-)
+a(c)  h(c)
+b(a)  e(h)  j(h)
+d(e)  f(e)  i(j)  k(j)
+g(f)
+
+Lookups:
+F
+B
+I
+
+BFS:
+C
+A
+H
+B
+E
+J
+D
+F
+I
+K
+G
+
+DFS preorder:
+C
+A
+B
+H
+E
+D
+F
+G
+J
+I
+K
+
+DFS inorder:
+A
+B
+C
+D
+E
+F
+G
+H
+I
+J
+K
+
+DFS postorder:
+B
+A
+D
+G
+F
+E
+I
+K
+J
+H
+C
+
+Remove b:
+c(-)
+a(c)  h(c)
+e(h)  j(h)
+d(e)  f(e)  i(j)  k(j)
+g(f)
+
+Remove f:
+c(-)
+a(c)  h(c)
+e(h)  j(h)
+d(e)  g(e)  i(j)  k(j)
+
+Remove h:
+c(-)
+a(c)  i(c)
+e(h)  j(h)
+d(e)  g(e)  k(j)
