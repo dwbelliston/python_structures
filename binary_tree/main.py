@@ -54,8 +54,10 @@ def main(arguments):
     btree.remove('f')
     btree.debug_print()
 
-    # 1. Remove the value with key = `h`.
-    # 1. Print the tree with `debug_print()`.
+    print('')
+    print('Remove h:')
+    btree.remove('h')
+    btree.debug_print()
 
 if __name__ == '__main__':
     main(sys.argv)

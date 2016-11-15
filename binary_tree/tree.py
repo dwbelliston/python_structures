@@ -54,8 +54,11 @@ class BTree(object):
             self._remove_no_child(remove_node)
 
         else:
-            # Node has one child, replace it with the child node.
-            if remove_node.has_left() or remove_node.has_right():
+            # Node has two children, go left and find the highest replacement
+            if remove_node.has_left() and remove_node.has_right():
+                self._remove_two_child(remove_node)
+            else:
+                # Node has one child, replace it with the child node.
                 self._remove_one_child(remove_node)
 
     def _remove_no_child(self, node):
@@ -75,6 +78,33 @@ class BTree(object):
         elif node.parent.left == node:
             replacement_node.parent = node.parent
             node.parent.left = replacement_node
+
+    def _remove_two_child(self, node):
+        largest_left = self._find_largest_left(node.left)
+
+        # Remove the node from the tree
+        self._remove_no_child(largest_left)
+
+        # Change reference to parent
+        largest_left.parent = node.parent
+
+        #  Change reference on parent
+        if node.parent.right == node:
+            node.parent.right = largest_left
+        else:
+            node.parent.left = largest_left
+
+        # Change reference on children
+        node.left.parent = largest_left
+        node.right.parent = largest_left
+
+        # Change reference to left and right
+        largest_left.left, largest_left.right = node.left, node.right
+
+    def _find_largest_left(self, node):
+        while node.right:
+            node = node.right
+        return node
 
     def walk_dfs_inorder(self, node):
         '''iterates through the nodes of the tree in depth-first-search
