@@ -28,3 +28,14 @@ class newme(OtherClass):
 Composition allows you to expose only the methods you want. (It could be accessed is some languages that dont have explicit private variables)
 
 Generally Composition is better because you have more control. But if you truly are what you are inheriting, than that makes sense.
+
+
+###Types
+
+Statically: type is determined at compile time (java)
+
+Dynamically: type is determined at run time (python)
+
+Strong: cant change the type after it is typed
+
+Weak: change type on fly
