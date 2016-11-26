@@ -1,0 +1,48 @@
+String hash table:
+0: Darkwinged Fungus Gnats, Huntsman Spiders (Golden Huntsman), Lynx Spiders, Scorpions
+1: Aphids, Cellar Spiders, Cobweb Spiders (Black Widow), Crab Spiders, Hard Scales
+2: Camel Spiders, Seed Bugs, Thrips, Weevils/Bark Beetles
+3: Ants, Codling Moth, Crevice Weaving Spiders, Indian Meal Moth
+4: Assassin Bugs, Ground Beetles, Longhorned/Roundheaded Wood Borers, Wolf SpiLycosidaeders
+5: Pseudoscorpions, Sac Spiders (Yellow Sac Spider), Woodlouse Spider
+6: Jumping Spiders (Bold Jumper), Leaf Beetles, Peach Twig Borer, Ticks (Rocky Mt. Wood Tick)
+7: Armyworms/Cutworms, Clearwing Moths, Eriophyid Mites (Blister/Rust/Gall Mites), Funnel Web Spiders (Hobo)
+8: Carpet/Warehouse Beetles, Flatheaded/Metallic Wood Borer, Ground Spiders, Millipedes, Soft Ticks (Poultry Tick)
+9: Orb-Weaving Spiders (Banded Garden Spider), Web-Spinning Spider Mites, White Grubs
+
+String lookups:
+Indian Meal Moth
+Orb-Weaving Spiders (Banded Garden Spider)
+
+Guid hash table:
+0: 00000158691797bd77464872000a0018001b000c, 00000158691797bd7746487c000a001800388ccf, 00000158691797bd77464886000a001800388ccf, 00000158691797bd77464890000a001991ef0003
+1: 00000158691797bd77464873000a0018001b000c, 00000158691797bd7746487d000a001800388ccf, 00000158691797bd77464887000a001991ef0003, 00000158691797bd77464891000a001991ef0003
+2: 00000158691797bd77464874000a0018001b000c, 00000158691797bd7746487e000a001800388ccf, 00000158691797bd77464888000a001991ef0003, 00000158691797bd77464892000a001991ef0003
+3: 00000158691797bd77464875000a001800388ccf, 00000158691797bd7746487f000a001800388ccf, 00000158691797bd77464889000a001991ef0003, 00000158691797bd77464893000a001991ef0003
+4: 00000158691797bd77464876000a001800388ccf, 00000158691797bd77464880000a001800388ccf, 00000158691797bd7746488a000a001991ef0003, 00000158691797bd77464894000a001991ef0003
+5: 00000158691797bd77464877000a001800388ccf, 00000158691797bd77464881000a001800388ccf, 00000158691797bd7746488b000a001991ef0003, 00000158691797bd77464895000a001991ef0003
+6: 00000158691797bd7746486e000a0018001b000c, 00000158691797bd77464878000a001800388ccf, 00000158691797bd77464882000a001800388ccf, 00000158691797bd7746488c000a001991ef0003
+7: 00000158691797bd7746486f000a0018001b000c, 00000158691797bd77464879000a001800388ccf, 00000158691797bd77464883000a001800388ccf, 00000158691797bd7746488d000a001991ef0003
+8: 00000158691797bd77464870000a0018001b000c, 00000158691797bd7746487a000a001800388ccf, 00000158691797bd77464884000a001800388ccf, 00000158691797bd7746488e000a001991ef0003
+9: 00000158691797bd77464871000a0018001b000c, 00000158691797bd7746487b000a001800388ccf, 00000158691797bd77464885000a001800388ccf, 00000158691797bd7746488f000a001991ef0003
+
+Guid lookups:
+00000158691797bd77464883000a001800388ccf
+00000158691797bd7746488c000a001991ef0003
+
+Image hash table:
+0: application_warning.png, direction_down.png, document.png, file_warning.png, folder_search.png, mail_write.png, message.png, volume.png
+1: diskette.png, document_search.png, load_download.png, security_keyandlock.png, user_warning.png, volume_down.png, volume_up.png
+2: calculator.png, folder.png, notification_remove.png, player_fastforward.png, shoppingcart_remove.png, volume_mute.png
+3: clock.png, computer.png, home.png, mail.png, mail_delete.png, mail_search.png, notification_add.png, security_lock.png, shoppingcart_add.png, shoppingcart_checkout.png, user_add.png
+4: camera.png, direction_left.png, disc.png, file_add.png, folder_delete.png, load_upload.png, search.png, user.png
+5: mail_receive.png, notification_warning.png, piechart.png, player_pause.png, player_rewind.png, star_empty.png, star_full.png, user_manage.png
+6: application.png, calendar.png, file_delete.png, notification_done.png, player_record.png, shoppingcart_warning.png, star_half.png
+7: coffee.png, document_add.png, document_warning.png, file_edit.png, file_search.png, folder_empty.png, notification_error.png, security_key.png, shoppingcart.png
+8: direction_right.png, direction_up.png, file.png, folder_add.png, folder_warning.png, mail_warning.png, user_delete.png
+9: document_delete.png, document_edit.png, mail_send.png, player_play.png, player_stop.png, rss.png, security_unlock.png
+
+Image lookups:
+document.png
+security_keyandlock.png
+
