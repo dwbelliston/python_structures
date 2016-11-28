@@ -45,4 +45,3 @@ Image hash table:
 Image lookups:
 document.png
 security_keyandlock.png
-

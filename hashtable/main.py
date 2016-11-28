@@ -50,16 +50,13 @@ def main(arguments):
         print(val)
 
 
-
     # Create an ImageHashtable.
     image_hash = ImageHashtable()
     # Add each image in `images.txt` with the key being the filename and the value being filename.  Note that your **key should be calculated from the bytes of the file**, not from the filename.
     with open('images.txt') as f:
         lines = f.read().splitlines()
         for line in lines:
-            v = line
-            k = line.lower()
-            image_hash.set(k, v)
+            image_hash.set(line.lower(), line)
 
     # Print the hashtable (debug_print)
     print('\nImage hash table:')
@@ -68,9 +65,12 @@ def main(arguments):
     # Do two lookups with `get()`: 'document.png' and 'security_keyandlock.png'.
     lookups = ['document.png', 'security_keyandlock.png']
     print('\nImage lookups:')
-    for key in lookups:
-        val = image_hash.get(key)
-        print(val)
+    for line in lookups:
+        with open('images/{}'.format(line), 'rb') as i:
+            k = i.read()
+            k = str(len(k))
+            val = image_hash.get(line)
+            print(val)
 
 
 if __name__ == '__main__':

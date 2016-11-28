@@ -37,15 +37,22 @@ class Hashtable(metaclass=ABCMeta):
 class StringHashtable(Hashtable):
     def get_hash(self, key):
         '''The StringHashtable should compute the index based on the contents of the string.'''
-        x = [ord(c) for c in key[0:1]]
+        # x = [ord(c) for c in key]
         return len(key) % 10
 
 
 class GuidHashtable(Hashtable):
     def get_hash(self, key):
-        return 7
+        random = int(key[16:24], 16)
+        last = (str(random)[-1:])
+        return int(last)
 
 
 class ImageHashtable(Hashtable):
     def get_hash(self, key):
-        return 6
+        index = None
+        with open('images/{}'.format(key), 'rb') as i:
+            k = i.read()
+            k = str(len(k))
+            index = int(k) % 1000 % 100 % 10
+        return index
