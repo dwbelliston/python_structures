@@ -1,0 +1,42 @@
+ALL_FIT = ( 5( (sum_SINGLE_FIT/count_SINGLE_FIT) /10) * (Collision * BusinessHours) + 1.5(FreeTime) + 2.5(ClassFree) + .5(FreeRooms) + .5(StudentsLeave) ) / 100
+
+[Example Output is 0 - 100]
+
+Collision = 0 if yes, 1 if no collisions
+* Two courses cannot be scheduled in the same room at the same time.
+
+BusinessHours = 0 if no, 1 if inside business hours
+* Rooms can only be used from 8am-5pm each day.
+
+FreeTime = 1 if minimal, 5 if decent, 10 if lots of free time
+* When calculating free time, add 0.25 hours to the time of each course for students to move.
+
+ClassFree = 1 if minimal, 5 if decent, 10 if lots of free time
+* Maximize blocks of free time for each room.
+
+FreeRooms = 1 if minimal, 5 if decent, 10 if lots of free rooms
+* Minimize the overall number of rooms used.
+
+StudentsLeave = 1 if lots of students leave, 5 if a few, 10 if none
+* If you cannot find times for all courses in the building, minimize the total number of students who must leave the building for classrooms.
+
+sum_SINGLE_FIT = sum of the individual fit functions
+count_SINGLE_FIT = count of total assignments
+
+--------------
+
+SINGLE_FIT = 3(ConsistentTime) *  5(Capacity) * (StartTime) * 2(PreferredTime)
+
+[Example Output is 0 - 100]
+
+ConsistentTime = 1 if extreme, 5 if acceptable, 10 if the same
+* Each course should be scheduled for its room at the same times each day it meets.
+
+Capacity = 1 if 3 stdev away or overflow, 5 if 1-2 stdev away, 10 if exact
+* Match the room size as close as possible to the number of students in each course.
+
+StartTime = 0 if not starting on :00 or :30, 1 if same
+* Courses can only start on the hour or half-hour.
+
+PreferredTime = 1 if extreme, 5 if acceptable, 10 if the same
+* Schedule courses during their preferred times of the day whenever possible.
