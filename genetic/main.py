@@ -6,10 +6,9 @@ import re
 import csv
 from course import Course
 from room import Room
-from time_slot import create_slots
-
-# 'course', 'friday', 'get_value', 'hours', 'monday', 'preferred_room_type', 'preferred_time', 'section', 'students_per_section', 'thursday', 'tuesday', 'wednesday'
-
+from time_slot import create_slots, AllSlots
+from settings import RUNS
+from solutions import create_solution
 
 def main(arguments):
     ROOMS = []
@@ -30,7 +29,6 @@ def main(arguments):
                 COURSES.append(c)
 
     # Create room objects for each room
-    # Available times for each room in 30 min increment
     with open('rooms.csv', newline='') as f:
         reader = csv.reader(f)
         keys = next(reader)
@@ -38,10 +36,20 @@ def main(arguments):
             r = Room(dict(zip(keys, row)))
             ROOMS.append(r)
             time_slots = create_slots(r)
+            # Available times for each room in 30 min increment
             TIMESLOTS = TIMESLOTS + time_slots
 
+    # Begin runs
+    for run in RUNS:
+        moving_average = 10
+        # Stop generations when moving average dips below 1
+        while moving_average > 1.0:
+            # create solutions
+            for i in range(1):
+            # for i in range(run['solutions']):
+                solution = create_solution(TIMESLOTS, COURSES, run, i)
 
-    # Randomly get a class and assign it
+            moving_average = 0
 
     # Collection of all the classes to rooms is a solution
 
