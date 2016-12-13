@@ -8,7 +8,9 @@ from course import Course
 from room import Room
 from time_slot import create_slots, AllSlots
 from settings import RUNS
-from solutions import create_solution
+from solutions import Solution
+import copy
+
 
 def main(arguments):
     ROOMS = []
@@ -40,15 +42,20 @@ def main(arguments):
             TIMESLOTS = TIMESLOTS + time_slots
 
     # Begin runs
-    for run in RUNS:
+    for run_ind, run in enumerate(RUNS):
         moving_average = 10
+        run['index'] = run_ind + 1
         # Stop generations when moving average dips below 1
         while moving_average > 1.0:
             # create solutions
-            for i in range(1):
-            # for i in range(run['solutions']):
-                solution = create_solution(TIMESLOTS, COURSES, run, i)
+            for i in range(run['solutions']):
+            # for i in range(1):
+                course_copies = copy.deepcopy(COURSES)
+                solution = Solution(run, i, TIMESLOTS, course_copies)
+                solution.create_solution()
+                a = solution.get_fitness()
 
+                print(solution, a)
             moving_average = 0
 
     # Collection of all the classes to rooms is a solution

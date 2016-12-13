@@ -9,6 +9,7 @@ class Course(object):
         return self[key]
 
     def get_needed_slots(self):
+        # Add the .1 so it rounds up. dirty solution but works because of data
         return round((float(self.hours)+.25)/.5 + .1)
 
     def get_days(self):
@@ -22,4 +23,4 @@ class Course(object):
         return course_days
 
     def __str__(self):
-        return ('{}:[{}]'.format(self.course, self.section))
+        return ('{}_sec{}'.format(self.course, self.section))
